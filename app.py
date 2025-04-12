@@ -14,10 +14,11 @@ app = Flask(__name__)
 
 # Configure CORS for Vercel deployment
 CORS(app, resources={
-    r"/contact": {
+    r"/api/contact": {
         "origins": [
             "http://localhost:5000",  # Local development
-            "https://*.vercel.app",   # Any Vercel deployment
+            "http://localhost:3000",   # Local development alternative port
+            "https://*.vercel.app",    # Vercel deployment URLs
             "https://your-portfolio-domain.com"  # Your custom domain if any
         ],
         "methods": ["POST"],
@@ -85,7 +86,7 @@ def send_email_notification(name, email, subject, message):
         logger.error(f"Failed to send email notification: {str(e)}")
         return False
 
-@app.route('/contact', methods=['POST'])
+@app.route('/api/contact', methods=['POST'])
 def contact():
     try:
         data = request.get_json()
@@ -124,7 +125,7 @@ def contact():
 
 # Vercel serverless function handler
 def handler(request):
-    if request.path == '/contact':
+    if request.path == '/api/contact':
         return contact()
     return {"statusCode": 404, "body": "Not Found"}
 
