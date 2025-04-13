@@ -2,7 +2,6 @@
 
 A modern, responsive portfolio website built with HTML and Tailwind CSS, featuring a contact form powered by Formspree.
 
-![Portfolio Preview](images/profile.jpg)
 
 ## 🚀 Features
 
