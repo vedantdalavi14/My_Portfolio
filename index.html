@@ -628,7 +628,7 @@
                         
                         <h3 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-gray-800 dark:text-white relative z-10">Send Me a Message</h3>
                         
-                        <form id="contact-form" class="relative z-10">
+                        <form id="contact-form" action="https://formspree.io/f/xdkebbrv" method="POST" class="relative z-10">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                                 <div class="group">
                                     <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
@@ -815,8 +815,6 @@
             const formError = document.getElementById('form-error');
             
             contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
                 // Reset error messages
                 document.querySelectorAll('.text-red-500').forEach(el => el.classList.add('hidden'));
                 formSuccess.classList.add('hidden');
@@ -851,46 +849,24 @@
                     isValid = false;
                 }
                 
-                if (!isValid) return;
+                if (!isValid) {
+                    e.preventDefault();
+                    return;
+                }
                 
                 // Disable button and show loading state
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
                 
-                // Send data
-                fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ name, email, subject, message }),
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Show success message
+                // Formspree will handle the submission
+                // We'll show success message after form submission
+                setTimeout(() => {
                     formSuccess.classList.remove('hidden');
-                    // Reset form
                     contactForm.reset();
-                    // Scroll to the success message
                     formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                })
-                .catch(error => {
-                    // Show error message
-                    formError.classList.remove('hidden');
-                    console.error('Error:', error);
-                    // Scroll to the error message
-                    formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                })
-                .finally(() => {
-                    // Reset button state
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Send Message';
-                });
+                }, 1500);
             });
             
             // Smooth scrolling for all anchor links
