@@ -1,31 +1,47 @@
 # Vedya's Portfolio Website
 
-A modern, responsive portfolio website built with HTML, Tailwind CSS, and a Flask backend, deployed on Vercel.
+A modern, responsive portfolio website built with HTML and Tailwind CSS, featuring a contact form powered by Formspree.
 
-## Features
+![Portfolio Preview](images/profile.jpg)
 
-- Responsive design for all device sizes
-- Modern UI with smooth animations and transitions
-- Interactive project showcases
-- Skills section with visual icons
-- Contact form with email notifications
-- Dark mode support
+## 🚀 Features
 
-## Technology Stack
+- **Responsive Design**: Looks great on all devices from mobile to desktop
+- **Modern UI**: Clean and professional design with smooth animations
+- **Dark Mode**: Automatic dark mode support for better viewing experience
+- **Interactive Elements**: Hover effects and smooth transitions
+- **Contact Form**: Powered by Formspree for reliable email delivery
+- **Project Showcase**: Beautiful display of your work with hover effects
+- **Skills Section**: Visual representation of your technical skills
+- **Resume Section**: Professional presentation of your experience
 
-- **Frontend**: HTML with Tailwind CSS
-- **Backend**: Python with Flask
-- **Deployment**: Vercel
-- **Email Service**: Gmail SMTP
+## 🛠️ Technology Stack
 
-## Local Development
+- **Frontend**: 
+  - HTML5
+  - Tailwind CSS
+  - JavaScript (Vanilla)
+- **Form Handling**: Formspree
+- **Icons**: Font Awesome
+- **Deployment**: Any static hosting service (GitHub Pages, Netlify, Vercel, etc.)
+
+## 📦 Project Structure
+
+```
+My Portfolio/
+├── index.html          # Main website file
+├── images/            # Images directory
+│   └── profile.jpg    # Profile photo
+└── README.md          # Project documentation
+```
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Python 3.7+
-- Git
-- GitHub account
-- Vercel account
+- A modern web browser
+- Basic understanding of HTML and CSS
+- A Formspree account (for the contact form)
 
 ### Setup
 
@@ -35,85 +51,69 @@ A modern, responsive portfolio website built with HTML, Tailwind CSS, and a Flas
    cd portfolio
    ```
 
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   # On Windows
-   venv\Scripts\activate
-   # On macOS/Linux
-   source venv/bin/activate
-   ```
+2. Open `index.html` in your browser to view the website locally.
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Customization
 
-4. Create a `.env` file:
-   ```bash
-   cp .env.example .env
-   ```
-   Then edit `.env` with your email credentials.
+1. **Profile Information**:
+   - Update your name, title, and bio in the hero section
+   - Replace `profile.jpg` with your own photo
+   - Update social media links
 
-5. Run the development server:
-   ```bash
-   python app.py
-   ```
+2. **Projects**:
+   - Add your own projects in the projects section
+   - Update project images, descriptions, and links
 
-6. Visit `http://localhost:5000` in your browser.
+3. **Skills**:
+   - Modify the skills section to showcase your expertise
+   - Add or remove skills as needed
 
-## Deployment
+4. **Contact Form**:
+   - Sign up for a free Formspree account
+   - Replace the Formspree endpoint in the form action with your own
 
-### GitHub Setup
+## 🌐 Deployment
 
-1. Create a new repository on GitHub
-2. Push your code:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/your-username/portfolio.git
-   git push -u origin main
-   ```
+This website can be deployed on any static hosting service:
 
-### Vercel Deployment
+### GitHub Pages
+1. Create a new repository
+2. Push your code to the repository
+3. Go to Settings > Pages
+4. Select the main branch as the source
+5. Your site will be live at `https://your-username.github.io/repository-name`
 
-1. Go to [Vercel](https://vercel.com)
-2. Import your GitHub repository
-3. Configure the following settings:
-   - Framework Preset: Other
-   - Build Command: (leave empty)
-   - Output Directory: .
-   - Install Command: pip install -r requirements.txt
+### Netlify
+1. Create a Netlify account
+2. Connect your GitHub repository
+3. Deploy with default settings
+4. Your site will be live with a Netlify subdomain
 
-4. Add Environment Variables:
-   - `EMAIL_ADDRESS`
-   - `EMAIL_PASSWORD` (Gmail app password)
-   - `OWNER_EMAIL`
-   - `FLASK_DEBUG=False`
+## 📝 Contact Form Setup
 
-5. Deploy!
+1. Go to [Formspree](https://formspree.io/)
+2. Sign up for a free account
+3. Create a new form
+4. Copy your form endpoint
+5. Replace the form action URL in `index.html` with your Formspree endpoint
 
-## Environment Variables
+## 🤝 Contributing
 
-Create a `.env` file with the following variables:
-```
-EMAIL_ADDRESS=your-email@gmail.com
-EMAIL_PASSWORD=your-app-specific-password
-OWNER_EMAIL=your-email@gmail.com
-FLASK_DEBUG=False
-PORT=5000
-```
+Contributions are welcome! Feel free to:
+- Report bugs
+- Suggest features
+- Submit pull requests
 
-## Contributing
+## 📄 License
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## License
+## 🙏 Acknowledgments
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Formspree](https://formspree.io/) for the contact form service
+- [Font Awesome](https://fontawesome.com/) for the icons
+
+---
+
+Made with ❤️ by Vedya 
